@@ -14,14 +14,6 @@ export default function Impressum() {
           <p>E-Mail: info.innovaone@gmail.com</p>
           <p>Verantwortlich für den Inhalt: Alessio Adriani</p>
         </div>
-
-        {/* Optional ergänzen, falls vorhanden */}
-        {/*
-        <div className="pt-4 space-y-1">
-          <p>Telefon: +41 XX XXX XX XX</p>
-          <p>UID: CHE-XXX.XXX.XXX</p>
-        </div>
-        */}
       </div>
     </main>
   );
