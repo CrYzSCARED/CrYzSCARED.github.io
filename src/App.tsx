@@ -4,12 +4,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-import ScrollToTop from "./components/ScrollToTop";   // ✅ NEU
+import ScrollToTop from "./components/ScrollToTop";
 
 import Index from "./pages/Index";
 import Leistungen from "./pages/Leistungen";
 import UeberMich from "./pages/UeberMich";
 import Kontakt from "./pages/Kontakt";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,7 +23,7 @@ const App = () => (
       <Sonner />
 
       <HashRouter>
-        {/* ✅ Scrollt bei Seitenwechsel automatisch nach oben */}
+        {/* Scrollt bei Seitenwechsel automatisch nach oben */}
         <ScrollToTop />
 
         <Routes>
@@ -29,13 +31,13 @@ const App = () => (
           <Route path="/leistungen" element={<Leistungen />} />
           <Route path="/ueber-mich" element={<UeberMich />} />
           <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
-
     </TooltipProvider>
   </QueryClientProvider>
 );
 
 export default App;
-
