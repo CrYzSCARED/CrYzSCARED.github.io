@@ -2,41 +2,77 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
+
     <script>
-  (function () {
-    const redirect = sessionStorage.redirect;
-    delete sessionStorage.redirect;
-    if (redirect && redirect !== location.pathname) {
-      history.replaceState(null, null, redirect);
-    }
-  })();
-</script>
-    
+      (function () {
+        const redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.pathname) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#ffffff" />
+
     <link rel="icon" href="./favicon.ico" />
     <link rel="icon" href="./favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
-    <title>InnovaOne – KI-Chatbots für Unternehmen</title>
-    <meta name="google-site-verification" content="5qBKTkunBSql7DnLtjyQg7mi2mYILvWuEYo2O_qylZs" />
-    <meta name="description" content="KI-Chatbots für Unternehmen. Automatisierte Website-Chatbots für besseren Kundenservice, strukturierte Inhalte und effizientere Prozesse." />
-    <meta name="author" content="InnovaOne Intelligence" />
 
-    <!-- Preload hero video for instant playback -->
+    <title>InnovaOne – KI-Chatbots für Unternehmen</title>
+
+    <meta
+      name="description"
+      content="KI-Chatbots für Unternehmen. Automatisierte Website-Chatbots für besseren Kundenservice, strukturierte Inhalte und effizientere Prozesse."
+    />
+    <meta name="author" content="InnovaOne Intelligence" />
+    <meta
+      name="keywords"
+      content="KI Chatbot, Website Chatbot, AI Chatbot, Chatbot für Unternehmen, Kundenservice Automation, FAQ Automation, InnovaOne"
+    />
+    <meta
+      name="google-site-verification"
+      content="5qBKTkunBSql7DnLtjyQg7mi2mYILvWuEYo2O_qylZs"
+    />
+
+    <!-- Preload hero video -->
     <link rel="preload" href="videos/hero-new.mp4" as="video" type="video/mp4" />
 
+    <!-- Open Graph -->
     <meta property="og:title" content="InnovaOne – KI-Chatbots für Unternehmen" />
-    <meta property="og:description" content="KI-Chatbots, die Websiten strukturieren, Kunden entlasten und Prozesse vereinfachen." />
+    <meta
+      property="og:description"
+      content="KI-Chatbots, die Websites strukturieren, Kunden entlasten und Prozesse vereinfachen."
+    />
     <meta property="og:type" content="website" />
-    
+    <meta property="og:url" content="https://innovaone.ch/" />
+    <meta property="og:image" content="https://innovaone.ch/og-image.png" />
 
-    <meta property="og:image" content="https://cryzscared.github.io/og-image.png" />
-    <meta name="twitter:image" content="https://cryzscared.github.io/og-image.png" />
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="InnovaOne – KI-Chatbots für Unternehmen" />
+    <meta
+      name="twitter:description"
+      content="KI-Chatbots, die Websites strukturieren, Kunden entlasten und Prozesse vereinfachen."
+    />
+    <meta name="twitter:image" content="https://innovaone.ch/og-image.png" />
   </head>
 
   <body>
+    <noscript>
+      InnovaOne Intelligence bietet KI-Chatbots für Unternehmen. Automatisierte
+      Website-Chatbots für besseren Kundenservice, strukturierte Inhalte und
+      effizientere Prozesse.
+    </noscript>
+
+    <div style="display: none;">
+      InnovaOne Intelligence bietet KI-Chatbots für Unternehmen, die Websites
+      strukturieren, Kundenanfragen automatisieren und Prozesse vereinfachen.
+      Leistungen: Chatbots, FAQ-Automatisierung, Integration und Support.
+    </div>
+
     <div id="root"></div>
     <script type="module" src="./src/main.tsx"></script>
   </body>
