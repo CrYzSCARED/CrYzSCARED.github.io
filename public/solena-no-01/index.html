@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solena No. 01 — Designstudie</title>
+  <meta name="description" content="Warme, bildstarke Designstudie mit Editorial-Look für Hospitality, Genuss, Boutique-Brands oder stilvolle lokale Unternehmen." />
+  <style>
+    :root{
+      --bg:#f5efe8;
+      --paper:#fffaf4;
+      --cream:#f0e5d6;
+      --ink:#241f1a;
+      --muted:#6d6255;
+      --line:rgba(36,31,26,.10);
+      --accent:#a86d3f;
+      --accent-soft:#c99468;
+      --forest:#485845;
+      --shadow:0 24px 60px rgba(74, 48, 23, 0.12);
+      --radius:30px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;background:
+      radial-gradient(circle at top left, rgba(201,148,104,.18), transparent 20%),
+      linear-gradient(180deg,#f8f2ec 0%, #f3ede6 100%);
+      color:var(--ink);overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .wrap{width:min(1180px,92vw);margin:0 auto}
+
+    .nav{position:sticky;top:0;z-index:40;background:rgba(248,242,236,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(36,31,26,.06)}
+    .navin{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+    .brand strong{display:block;text-transform:none;letter-spacing:-.02em;font-size:22px;color:var(--ink);margin-top:4px}
+    .links{display:flex;gap:26px;align-items:center;color:#5d5348;font-size:14px}
+    .links a:last-child{padding:11px 16px;border-radius:999px;background:var(--ink);color:#fff}
+
+    section{padding:96px 0;position:relative}
+    .hero{padding:42px 0 84px;min-height:calc(100vh - 74px);display:grid;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:34px;align-items:center}
+    .eyebrow{display:flex;align-items:center;gap:12px;color:var(--accent);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:56px;height:1px;background:var(--accent)}
+    h1,h2,h3,p{margin:0}
+    h1{font-family:Georgia, "Times New Roman", serif;font-size:clamp(58px,8vw,106px);line-height:.92;font-weight:500;letter-spacing:-.05em;margin:18px 0 22px}
+    h1 em{font-style:normal;color:var(--accent)}
+    .lead{max-width:620px;font-size:clamp(18px,2vw,22px);line-height:1.7;color:var(--muted)}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{padding:15px 22px;border-radius:999px;font-weight:700;transition:.25s ease}
+    .btn.main{background:var(--ink);color:#fff}
+    .btn.alt{border:1px solid var(--line);background:rgba(255,255,255,.54);color:var(--ink)}
+    .btn:hover{transform:translateY(-2px)}
+
+    .hero-visual{position:relative;min-height:690px}
+    .frame-main,.frame-small,.badge,.caption{position:absolute;box-shadow:var(--shadow)}
+    .frame-main{left:0;right:18%;top:52px;height:520px;border-radius:36px;overflow:hidden;background:#ddd}
+    .frame-main img,.frame-small img{width:100%;height:100%;object-fit:cover}
+    .frame-main:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%, rgba(20,14,10,.22) 100%)}
+    .frame-small{right:0;bottom:44px;width:46%;height:300px;border-radius:28px;overflow:hidden;border:10px solid #fff8f2}
+    .frame-small:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%, rgba(20,14,10,.14) 100%)}
+    .badge{left:2%;top:0;padding:14px 18px;border-radius:999px;background:rgba(255,250,244,.96);border:1px solid rgba(36,31,26,.08);font-size:13px;color:#6b5845}
+    .caption{right:6%;top:0;padding:20px 22px;background:rgba(255,250,244,.92);border:1px solid rgba(36,31,26,.08);border-radius:24px;max-width:240px}
+    .caption strong{display:block;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+    .caption span{font-size:15px;line-height:1.6;color:#5f554a}
+    .curve{position:absolute;left:-6%;bottom:8%;width:200px;height:200px;border:1px solid rgba(168,109,63,.25);border-radius:38% 62% 42% 58%/58% 34% 66% 42%;opacity:.7}
+
+    .section-head{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:end;margin-bottom:34px}
+    .kicker{font-size:12px;color:var(--accent);letter-spacing:.22em;text-transform:uppercase}
+    h2{font-family:Georgia, serif;font-size:clamp(42px,5vw,70px);line-height:.94;letter-spacing:-.05em}
+    .section-copy{font-size:18px;line-height:1.8;color:var(--muted)}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:rgba(255,250,244,.72);border:1px solid rgba(36,31,26,.08);border-radius:28px;padding:26px;box-shadow:var(--shadow)}
+    .card .num{font-family:Georgia,serif;font-size:52px;color:rgba(168,109,63,.22)}
+    .card h3{font-family:Georgia,serif;font-size:30px;margin:6px 0 14px}
+    .card p{line-height:1.75;color:var(--muted)}
+
+    .showcase{display:grid;grid-template-columns:1.18fr .82fr;gap:18px}
+    .photo-panel{min-height:520px;border-radius:34px;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+    .photo-panel img{width:100%;height:100%;object-fit:cover}
+    .photo-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,17,8,0) 20%, rgba(30,17,8,.28) 100%)}
+    .photo-copy{position:absolute;left:28px;right:28px;bottom:28px;color:#fffaf2}
+    .photo-copy .tag{display:inline-flex;padding:10px 14px;border-radius:999px;background:rgba(0,0,0,.28);backdrop-filter:blur(8px);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+    .photo-copy h3{font-family:Georgia,serif;font-size:42px;line-height:1.02;margin-top:16px}
+    .photo-copy p{margin-top:10px;max-width:470px;line-height:1.7;color:#f8f0e6}
+
+    .stack{display:grid;gap:18px}
+    .mini-card{border-radius:28px;background:rgba(255,250,244,.85);border:1px solid rgba(36,31,26,.08);padding:26px;box-shadow:var(--shadow)}
+    .mini-card h3{font-family:Georgia,serif;font-size:30px;line-height:1.04}
+    .mini-card p{margin-top:12px;color:var(--muted);line-height:1.75}
+    .statline{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(36,31,26,.08);color:#554b3f}
+    .statline strong{font-family:Georgia,serif;font-size:28px;color:var(--forest);font-weight:500}
+
+    .cta{padding-top:36px;padding-bottom:120px}
+    .cta-box{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:36px;border-radius:34px;background:linear-gradient(135deg, rgba(255,255,255,.72), rgba(240,229,214,.92));border:1px solid rgba(36,31,26,.08);box-shadow:var(--shadow)}
+    .cta-box h3{font-family:Georgia,serif;font-size:clamp(34px,4.8vw,58px);line-height:.95;letter-spacing:-.04em}
+    .footer{padding:28px 0 60px;color:#786e63;font-size:14px}
+
+    [data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .8s ease, transform .8s ease}
+    [data-reveal].show{opacity:1;transform:none}
+
+    @media (max-width: 1000px){
+      .hero-grid,.section-head,.showcase,.cta-box{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .links{display:none}
+      .hero-visual{min-height:620px}
+      .frame-main{right:6%}
+      .frame-small{width:54%}
+    }
+    @media (max-width: 640px){
+      section{padding:84px 0}
+      .hero{padding-top:24px}
+      .hero-visual{min-height:520px}
+      .frame-main{left:0;right:0;top:24px;height:330px}
+      .frame-small{right:4%;bottom:10px;width:62%;height:180px;border-width:6px}
+      .caption{right:2%;max-width:200px;padding:16px 18px}
+      .badge{left:0}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap navin">
+      <div class="brand">Designstudie<strong>Solena No. 01</strong></div>
+      <div class="links">
+        <a href="#idee">Idee</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#mehrwert">Mehrwert</a>
+        <a href="#kontakt">Referenz nutzen</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow" data-reveal>Warm Editorial Concept</div>
+        <h1 data-reveal>Wärme.<br><em>Atmosphäre.</em><br>Ein Auftritt mit Gefühl.</h1>
+        <p class="lead" data-reveal>Eine bildstarke, elegante Designstudie für Restaurants, Boutique-Hospitality, Cafés, Showrooms oder stilvolle lokale Unternehmen — deutlich lebendiger als ein rein schwarzer Look und trotzdem hochwertig.</p>
+        <div class="actions" data-reveal>
+          <a class="btn main" href="#idee">Design entdecken</a>
+          <a class="btn alt" href="#kontakt">Als Referenz behalten</a>
+        </div>
+      </div>
+      <div class="hero-visual" data-reveal>
+        <div class="badge">Große Bilder · sanfte Typografie · warmer Premium-Look</div>
+        <div class="caption"><strong>Konzeptfokus</strong><span>Einladende Bildsprache statt leerer dunkler Flächen. Premium, aber menschlicher.</span></div>
+        <div class="frame-main">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80" alt="Stilvolles Interior mit warmer Lichtstimmung">
+        </div>
+        <div class="frame-small">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80" alt="Detailaufnahme eines elegant gedeckten Tisches">
+        </div>
+        <div class="curve"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="idee">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker" data-reveal>Designidee</div>
+          <h2 data-reveal>Nicht dunkel um des Dunklen willen.</h2>
+        </div>
+        <p class="section-copy" data-reveal>Solena No. 01 setzt auf eine warme Editorial-Ästhetik mit echten Bildflächen, weichen Farben und einem hochwertigen, zugänglichen Gefühl. Dadurch wirkt die Seite luxuriös, aber nicht kalt — perfekt als dauerhafte Stilreferenz auf deiner Domain.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card" data-reveal>
+          <div class="num">01</div>
+          <h3>Mehr Emotion</h3>
+          <p>Bildstarke Hero-Szene und großzügige Fotoflächen erzeugen sofort Atmosphäre und machen die Seite lebendiger.</p>
+        </article>
+        <article class="card" data-reveal>
+          <div class="num">02</div>
+          <h3>Anderes Thema</h3>
+          <p>Keine sterile, fast leere Schwarzfläche — sondern eine stilvolle Richtung mit Wärme, Genuss und einladender Präsenz.</p>
+        </article>
+        <article class="card" data-reveal>
+          <div class="num">03</div>
+          <h3>Saubere Referenz</h3>
+          <p>Ohne echte Kundendaten, ohne problematische Fremdverweise und trotzdem stark genug für Portfolio und Verkaufsgespräche.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <div class="wrap showcase">
+      <article class="photo-panel" data-reveal>
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80" alt="Eleganter Gastraum mit natürlichem Licht">
+        <div class="photo-copy">
+          <div class="tag">Bildsprache</div>
+          <h3>Eine Seite darf sich nach einem Ort anfühlen.</h3>
+          <p>Große, hochwertige Bilder können Vertrauen schaffen und zeigen sofort die gewünschte Tonalität — noch bevor jemand die Texte gelesen hat.</p>
+        </div>
+      </article>
+      <div class="stack">
+        <article class="mini-card" data-reveal>
+          <h3>Für wen so eine Stilrichtung passt.</h3>
+          <p>Ideal für Gastronomie, Delikatessen, Event-Locations, Boutique-Hotellerie, Interior-Brands oder stilvolle lokale Konzepte, die hochwertig auftreten möchten.</p>
+        </article>
+        <article class="mini-card" data-reveal>
+          <h3>Warum sie als Referenz gut funktioniert.</h3>
+          <p>Sie zeigt gestalterische Qualität, verschiedene Bildkompositionen und einen professionellen Umgang mit Typografie — ohne dabei eine reale Kundenseite vorzutäuschen.</p>
+          <div style="margin-top:18px">
+            <div class="statline"><span>Stilrichtung</span><strong>Warm Luxury</strong></div>
+            <div class="statline"><span>Bildlastiger Eindruck</span><strong>Ja</strong></div>
+            <div class="statline"><span>Echte Kundendaten</span><strong>0</strong></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="mehrwert">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker" data-reveal>Mehrwert</div>
+          <h2 data-reveal>Eine zweite Referenz, die sich klar von Flux unterscheidet.</h2>
+        </div>
+        <p class="section-copy" data-reveal>Während Flux No. 02 heller, moderner und universeller wirkt, ergänzt Solena No. 01 dein Portfolio mit einer emotionaleren, luxuriöseren Richtung. So hast du zwei unterschiedliche Stilwelten, die du Kunden zeigen kannst.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card" data-reveal>
+          <h3>Flexibel anpassbar</h3>
+          <p>Texte, Farben und Bilder können später auf fast jede passende Branche angepasst werden.</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>Dauerhaft einsetzbar</h3>
+          <p>Da die Seite eigenständig ist, kannst du sie langfristig als Stilbeispiel auf deiner Domain behalten.</p>
+        </article>
+        <article class="card" data-reveal>
+          <h3>Stärker im Verkauf</h3>
+          <p>Eine visuelle Referenz mit Bildern ist oft überzeugender als nur zu erklären, was du theoretisch bauen könntest.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="cta">
+    <div class="wrap">
+      <div class="cta-box" data-reveal>
+        <div>
+          <div class="kicker">Solena No. 01</div>
+          <h3>Eine bildstarke Referenzseite für dein Portfolio.</h3>
+        </div>
+        <a class="btn main" href="#top">Zurück nach oben</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap footer">Designstudie · Solena No. 01 · Eigenständige Demo ohne reale Kundenreferenz</div>
+
+  <script>
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('show');
+      })
+    }, {threshold: .14});
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
